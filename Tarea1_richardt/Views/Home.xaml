@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tarea1_richardt.Views.Home"
+             Title="Home">
+    <VerticalStackLayout Padding="20">
+        <Label 
+            Text="UNIVERSIDAD ISRAEL"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            FontSize="24"
+            TextColor="Blue"/>
+        <Label Text="SISTEMA DE CALIFICACIONES"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               FontSize="24"
+               TextColor="SkyBlue"/>
+        <Label 
+            Text="Selecciones un Estudiante:" 
+            FontSize="20"
+            />
+        <Picker x:Name="estudiantePiker" Title="Estudiante">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Xaver</x:String>
+                    <x:String>Richard</x:String>
+                    <x:String>Diana</x:String>
+                    <x:String>Carolina</x:String>
+                </x:Array>
+
+            </Picker.ItemsSource>
+        </Picker>
+        <Label Text="Nota Parcial" FontSize="20"/>
+        <Label Text="Seguimiento"/>
+        <Entry x:Name="txtSeguimiento1"
+                   Keyboard="Numeric"/>
+        <Label Text="Examane1"/>
+        <Entry x:Name="txtExamen1"
+                   Keyboard="Numeric"/>
+        <Label Text="Nota Parcial 2" FontSize="20"/>
+        <Label Text="Seguimineto 2"/>
+        <Entry x:Name="txtSeguimiento2"
+                   Keyboard="Numeric"/>
+        <Label Text="Examane2"/>
+            <Entry x:Name="txtExamen2"
+           Keyboard="Numeric"/>
+        <Label Text="Fecha"/>
+        <DatePicker x:Name="dFechas"/>
+        <Label x:Name="ResultadoLab" FontSize="20"/>
+        <Button Text="Calcular Nota Final" Clicked="NotaClicked"/>
+
+
+
+    </VerticalStackLayout>
+</ContentPage>
