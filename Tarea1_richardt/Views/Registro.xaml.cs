@@ -6,10 +6,11 @@ public partial class Registro : ContentPage
 	{
 		InitializeComponent();
 	}
-	private void btnGuardar_Clicked(object sender, EventArgs e)
+	private async void btnGuardar_Clicked(object sender, EventArgs e)
 	{
 		string usuario = txtUsuario.Text;
 		string contraseña = txtContraseña.Text;
-		Navigation.PushModalAsync(new Views.Login(usuario, contraseña));
+        await Navigation.PushAsync(new Views.Login(usuario, contraseña));
+       // Navigation.PushModalAsync(new Views.Login(usuario, contraseña));
 	}
 }

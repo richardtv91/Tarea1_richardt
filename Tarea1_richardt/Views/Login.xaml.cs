@@ -12,24 +12,28 @@ public partial class Login : ContentPage
 	{
 		InitializeComponent();
 	}
-	private void btnIniciar_Clicked(object sender, EventArgs e)
+	private async void btnIniciar_Clicked(object sender, EventArgs e)
 	{
 		string usuario = txtUsuario.Text;
 		string contraseña = txtContraseña.Text;
 		int index = Array.IndexOf(user, usuario);
 		if (index >= 0 && password[index] == contraseña)
 		{
-			DisplayAlert("Bienvenido", $"Hola,{usuario}!", "Cerrar");
-			Navigation.PushModalAsync(new Views.Home());
+            _ = DisplayAlert("Bienvenido", $"Hola,{usuario}!", "Cerrar");
+			//Navigation.PushModalAsync(new Views.Home());
+			await Navigation.PushAsync(new Views.Home());
+
+
 
 		}
 		else {
-			DisplayAlert("Error", "Usuario o Contraseña incorrectos", "cerrar");
+            _ = DisplayAlert("Error", "Usuario o Contraseña incorrectos", "cerrar");
 		}
 
 	}
-	private void btnRegistrase_Clicked(object sender, EventArgs e)
+	private async void btnRegistrase_Clicked(object sender, EventArgs e)
 	{
-		Navigation.PushModalAsync(new Views.Registro());
-	}
+		//Navigation.PushModalAsync(new Views.Registro());
+        await Navigation.PushAsync(new Views.Registro());
+    }
 }

@@ -9,7 +9,8 @@
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            return new Window(new Views.Login());
+            //return new Window(new Views.Login());
+            return new Window(new NavigationPage(new Views.Login()));
         }
     }
 }
